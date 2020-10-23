@@ -1,0 +1,131 @@
+
+<%- include('./partials/header') %>
+
+
+<body class="hidden">
+
+	<main>
+    
+    <div class="preloader-wrap">
+    	<div class="outer">
+        	<div class="inner">
+      			<div class="percentage" id="precent"></div>
+                <div class="preloader-text">I am a UI/UX Designer <span>Tarkesh Deva</span></div>      
+      		</div>
+      	</div>
+    </div>
+    
+	<div class="cd-index cd-main-content">
+	
+	<!-- Page Content -->
+	<div id="page-content" class="" data-bgcolor="#eee">
+        
+        <!-- Background Lines -->
+        <div class="bg-lines hidden">    
+            <svg>
+    			<line x1="20%" y1="100%" x2="80%" y2="0"/>
+				<line x1="80%" y1="100%" x2="20%" y2="0"/>
+    		</svg>  
+        </div>
+        <!--/Background Lines -->
+        
+        
+    
+        <!-- Header -->
+        <header class="scroll-hide">
+            <div id="header-container">
+        
+            <!-- Logo -->
+            <div id="logo">
+                <a  href="/">
+                    <img class="black-logo" src="images/logo.png" alt="ClaPat Logo">
+                    <img class="white-logo" src="images/logo-white.png" alt="ClaPat Logo">
+                </a>
+            </div>
+            <!--/Logo -->            
+            
+            <div class="menu-info">Featured Projects</div> 
+            
+            <!-- Menu Burger -->
+            <div id="burger-wrapper">
+            	<div id="burger-circle"></div>
+                <div id="menu-burger">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <!--/Menu Burger -->
+        
+            </div>
+        </header>
+        <!--/Header -->
+        
+        
+        <!-- Menu Overlay -->
+        <div id="menu-overlay">
+            
+            <div id="close-menu"></div>  
+            
+            <div class="outer">
+                <div class="inner">
+                    
+                    <nav>                    
+                        <ul class="main-menu">
+                            <li class="mp active"><a class="ajax-link menu-link" data-type="page-transition" href="/"><span></span>Home</a></li>
+                            <li class="mp"><a  href="/portfolio"><span></span>Portfolio</a></li>
+                            <li class="mp"><a  href="/about"><span></span>About</a></li>
+                            <li class="mp"><a  href="/contact"><span></span>Contact</a></li>
+                        </ul>                
+                    </nav>
+                    
+                    
+                </div>
+            </div>
+        
+        </div>
+        <!-- Menu Overlay -->
+        
+        
+        
+        <!-- Showcase Holder -->
+        <div id="showcase-holder"> 
+            <div id="showcase-slider"> 
+            
+            
+                <% articles.forEach(article => { %>
+                    <!-- Section Slide -->
+                    <div class="section light-content">
+                        
+                        <div class="img-mask">
+                            <a href="donate.html">
+                                <div class="img-perspective">
+                                    <div class="img-split">
+                                        <div class="section-image" data-src="images/01hero.jpg"></div>
+                                        <div class="section-image-mirror"></div>                        
+                                    </div>
+                                </div>
+                             </a>
+                        </div>
+                                                   
+                        <div class="section-shadow"></div>
+                        
+                        <div class="section-caption-outer">
+                            <div class="section-caption-inner">
+                                <h2 class="section-title sa-one"><%= article.title %></h2>
+                                <p class="section-subtitle sa-two"><%= article.description %></p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <!--/Section Slide -->					
+                    <% }) %>      				
+                
+                                
+                    
+                                
+            </div>
+        </div>    
+        <!-- Showcase Holder -->
+        
+        
+<%- include('./partials/footer') %>  
