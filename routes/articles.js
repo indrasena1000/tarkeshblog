@@ -28,12 +28,6 @@ articlerouter.get('/:slug', async (req, res) => {
   if (article == null) res.redirect('/')
   res.render('articles/show', { article: article })
 })
-//dalr5xufy
-cloudinary.config({ 
-  cloud_name: 'dalr5xufy', 
-  api_key: '442241153524944', 
-  api_secret: '8tb8uf9jbj3hqYA4aK2048T9Nys' 
-});
 
 
 
