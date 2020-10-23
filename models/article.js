@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const marked = require('marked')
 const slugify = require('slugify')
 const createDomPurify = require('dompurify')
+var cloudinary = require('cloudinary').v2;
 const { JSDOM } = require('jsdom')
 const dompurify = createDomPurify(new JSDOM().window)
 
@@ -29,7 +30,8 @@ const articleSchema = new mongoose.Schema({
   sanitizedHtml: {
     type: String,
     required: true
-  }
+  },
+  img:{type:String}
 })
 
 articleSchema.pre('validate', function(next) {

@@ -6,20 +6,21 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var fs = require('fs'); 
+var cloudinary = require('cloudinary').v2;
 var path = require('path'); 
 var multer = require('multer'); 
 require('dotenv').config();
 
-var storage = multer.diskStorage({ 
-  destination: (req, file, cb) => { 
-      cb(null, 'uploads') 
-  }, 
-  filename: (req, file, cb) => { 
-      cb(null, file.fieldname + '-' + Date.now()) 
-  } 
-}); 
+// var storage = multer.diskStorage({ 
+//   destination: (req, file, cb) => { 
+//       cb(null, 'uploads') 
+//   }, 
+//   filename: (req, file, cb) => { 
+//       cb(null, file.fieldname + '-' + Date.now()) 
+//   } 
+// }); 
 
-var upload = multer({ storage: storage }); 
+// var upload = multer({ storage: storage }); 
 
 
 
@@ -84,6 +85,6 @@ app.use(function(err, req, res, next) {
 
 
 
-app.listen(5000)
+app.listen(3007)
 
 module.exports = app;
